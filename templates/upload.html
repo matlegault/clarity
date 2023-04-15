@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Sat Apr 15 2023 21:35:28 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Sat Apr 15 2023 22:42:16 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="643b10f3eb8a183e8018ef55" data-wf-site="643ac28fcbd2fdab66d35807">
 <head>
   <meta charset="utf-8">
@@ -32,7 +32,7 @@
 <body>
   <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
     <div class="container w-container">
-      <a href="#" class="w-nav-brand"><img src="images/logo-clarity.svg" loading="lazy" alt=""></a>
+      <a href="/" class="w-nav-brand"><img src="images/logo-clarity.svg" loading="lazy" alt=""></a>
       <div class="spacer"></div>
       <nav role="navigation" class="w-nav-menu">
         <a href="#" class="nav-link w-nav-link">About</a>
@@ -49,19 +49,43 @@
   <div class="wf-section">
     <div class="w-container">
       <div class="header">
-        <div class="header-text">
-          <h1 class="center">Your image scored<span class="header-span"></span></h1>
+        <div class="header-text center">
+          <h3 class="center">Your image scored<span class="header-span"></span></h3>
           <h1 class="center"><span id="score" class="header-span">{{score}}</span> out of 10</h1>
+          <h4 id="commentary" class="center">You did meh<span class="header-span"></span></h4>
           <div class="w-embed w-script">
             <script>
-  const scoreElement = document.getElementById('score');
-  const score = parseFloat(scoreElement.innerHTML).toFixed(2);
-  scoreElement.innerHTML = score;
-</script>
+              const scoreElement = document.getElementById('score');
+              const score = parseFloat(scoreElement.innerHTML).toFixed(2);
+              scoreElement.innerHTML = score;
+
+
+              const commentElement = document.getElementById('commentary');
+              switch(true) {
+                case (score < 0):
+                  commentElement.innerHTML = "Re-evaluate your life";
+                  break;
+                case (score >= 0 && score < 2):
+                  commentElement.innerHTML = "Are you even trying?";
+                  break;
+                case (score >= 2 && score < 4):
+                  commentElement.innerHTML = "Meh, not bad";
+                  break;
+                case (score >= 4 && score < 6):
+                  commentElement.innerHTML = "You're an 8 in Ottawa";
+                  break;
+                case (score >= 6):
+                  commentElement.innerHTML = "Instafamous";
+                  break;
+                default:
+                  console.log("You're off the scale!");
+              }
+            </script>
           </div>
           <div class="uploaded-image-wrapper">
             <div class="w-embed"><img class="uploaded-image" src="data:image/jpeg;base64,{{ image_data }}" alt="Uploaded image"></div>
           </div>
+          <a href="/" class="button space-under">Try another one</a>
           <p class="center lead">Our algorithm evaluates every single photo based on an artificial intelligence to pick the ones most likely to generate likes, comments, and overall Instagram engagement.</p>
         </div>
       </div>
