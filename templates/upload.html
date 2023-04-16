@@ -61,19 +61,28 @@
   const commentElement = document.getElementById('commentary');
               switch(true) {
                 case (score < 0):
-                  commentElement.innerHTML = "Re-evaluate your life";
+                  commentElement.innerHTML = "What the hell is even that?";
                   break;
-                case (score >= 0 && score < 2):
-                  commentElement.innerHTML = "Are you even trying?";
+                case (score >= 0 && score < 1):
+                  commentElement.innerHTML = "Looks like someone needs a lesson in effort.";
                   break;
-                case (score >= 2 && score < 4):
-                  commentElement.innerHTML = "Meh, not bad";
+                case (score >= 1 && score < 2):
+                  commentElement.innerHTML = "I think you forgot to put in the effort for this one.";
                   break;
-                case (score >= 4 && score < 6):
-                  commentElement.innerHTML = "You're an 8 in Ottawa";
+                case (score >= 2 && score < 3):
+                  commentElement.innerHTML = "This photo needs more than a filter.";
+                  break;
+                case (score >= 3 && score < 4):
+                  commentElement.innerHTML = "Meh, not bad.";
+                  break;
+                case (score >= 4 && score < 5):
+                  commentElement.innerHTML = "You go girl!";
+                  break;
+                case (score >= 5 && score <6):
+                  commentElement.innerHTML = "You're an 8 in Ottawa.";
                   break;
                 case (score >= 6):
-                  commentElement.innerHTML = "Instafamous";
+                  commentElement.innerHTML = "Fk'n beautiful dawg!";
                   break;
                 default:
                   console.log("You're off the scale!");
