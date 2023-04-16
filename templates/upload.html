@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
-<!--  Last Published: Sat Apr 15 2023 22:42:16 GMT+0000 (Coordinated Universal Time)  -->
+<!--  Last Published: Sun Apr 16 2023 17:06:36 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="643b10f3eb8a183e8018ef55" data-wf-site="643ac28fcbd2fdab66d35807">
 <head>
   <meta charset="utf-8">
@@ -35,11 +35,10 @@
       <a href="/" class="w-nav-brand"><img src="images/logo-clarity.svg" loading="lazy" alt=""></a>
       <div class="spacer"></div>
       <nav role="navigation" class="w-nav-menu">
-        <a href="#" class="nav-link w-nav-link">About</a>
         <a href="#" class="nav-link w-nav-link">Features</a>
-        <a href="#" class="nav-link w-nav-link">Blog</a>
-        <a href="#" class="nav-link w-nav-link">Team</a>
-        <a href="#" class="button w-nav-link">Team</a>
+        <a href="#" class="nav-link w-nav-link">Pricing</a>
+        <a href="#" class="nav-link w-nav-link">Log In</a>
+        <a href="#" class="button w-nav-link">Sign Up</a>
       </nav>
       <div class="w-nav-button">
         <div class="w-icon-nav-menu"></div>
@@ -55,12 +54,11 @@
           <h4 id="commentary" class="center">You did meh<span class="header-span"></span></h4>
           <div class="w-embed w-script">
             <script>
-              const scoreElement = document.getElementById('score');
-              const score = parseFloat(scoreElement.innerHTML).toFixed(2);
-              scoreElement.innerHTML = score;
+  const scoreElement = document.getElementById('score');
+  const score = parseFloat(scoreElement.innerHTML).toFixed(2);
+  scoreElement.innerHTML = score;
 
-
-              const commentElement = document.getElementById('commentary');
+  const commentElement = document.getElementById('commentary');
               switch(true) {
                 case (score < 0):
                   commentElement.innerHTML = "Re-evaluate your life";
@@ -80,13 +78,21 @@
                 default:
                   console.log("You're off the scale!");
               }
-            </script>
+</script>
           </div>
           <div class="uploaded-image-wrapper">
             <div class="w-embed"><img class="uploaded-image" src="data:image/jpeg;base64,{{ image_data }}" alt="Uploaded image"></div>
           </div>
-          <a href="/" class="button space-under">Try another one</a>
+          <a href="/" class="button secondary space-under not-flex">Try another one</a>
           <p class="center lead">Our algorithm evaluates every single photo based on an artificial intelligence to pick the ones most likely to generate likes, comments, and overall Instagram engagement.</p>
+          <div class="divider"></div>
+          <div class="div-block-2">
+            <div class="div-block">
+              <h5 class="heading">Want to see all insights?</h5><img src="images/clarity-pro-logo.svg" loading="lazy" alt="" class="image">
+              <a href="/" class="button">Start free trial</a>
+              <h5 class="upload-lead filename">Subscription will renew at $10.99 monthly</h5>
+            </div><img src="images/proeliteplus.jpg" loading="lazy" sizes="(max-width: 479px) 91vw, (max-width: 767px) 95vw, (max-width: 991px) 726px, 938px" srcset="images/proeliteplus-p-500.jpg 500w, images/proeliteplus-p-800.jpg 800w, images/proeliteplus-p-1080.jpg 1080w, images/proeliteplus.jpg 1595w" alt="" class="image-2">
+          </div>
         </div>
       </div>
     </div>
